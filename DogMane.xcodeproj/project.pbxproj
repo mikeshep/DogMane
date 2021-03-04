@@ -3,18 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0559D35A25F164D0000D07A1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0559D35925F164D0000D07A1 /* RxCocoa */; };
 		0565AC6525F15DA300757AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6425F15DA300757AB1 /* AppDelegate.swift */; };
-		0565AC6725F15DA300757AB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6625F15DA300757AB1 /* SceneDelegate.swift */; };
-		0565AC6925F15DA300757AB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6825F15DA300757AB1 /* ViewController.swift */; };
-		0565AC6C25F15DA300757AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0565AC6A25F15DA300757AB1 /* Main.storyboard */; };
+		0565AC6925F15DA300757AB1 /* DogsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6825F15DA300757AB1 /* DogsListViewController.swift */; };
 		0565AC6E25F15DAB00757AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0565AC6D25F15DAB00757AB1 /* Assets.xcassets */; };
 		0565AC7125F15DAB00757AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0565AC6F25F15DAB00757AB1 /* LaunchScreen.storyboard */; };
 		0565AC7C25F15DAB00757AB1 /* DogManeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC7B25F15DAB00757AB1 /* DogManeTests.swift */; };
 		0565AC8725F15DAB00757AB1 /* DogManeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC8625F15DAB00757AB1 /* DogManeUITests.swift */; };
+		0565AC9925F15E2900757AB1 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 0565AC9825F15E2900757AB1 /* Domain */; };
+		0565AC9F25F1601300757AB1 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 0565AC9E25F1601300757AB1 /* Network */; };
+		0569318925F16E9700A8DE42 /* DogsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569318825F16E9700A8DE42 /* DogsListViewModel.swift */; };
+		056931A025F16F1800A8DE42 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569319A25F16F1700A8DE42 /* ViewControllerProtocol.swift */; };
+		056931A125F16F1800A8DE42 /* ViewModelDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569319B25F16F1800A8DE42 /* ViewModelDataSourceProtocol.swift */; };
+		056931A225F16F1800A8DE42 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569319C25F16F1800A8DE42 /* ViewModelProtocol.swift */; };
+		056931A325F16F1800A8DE42 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569319D25F16F1800A8DE42 /* Builder.swift */; };
+		056931A425F16F1800A8DE42 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569319E25F16F1800A8DE42 /* RouterProtocol.swift */; };
+		056931AE25F16FD500A8DE42 /* DogsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056931AD25F16FD500A8DE42 /* DogsListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +45,7 @@
 /* Begin PBXFileReference section */
 		0565AC6125F15DA300757AB1 /* DogMane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogMane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0565AC6425F15DA300757AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0565AC6625F15DA300757AB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0565AC6825F15DA300757AB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0565AC6B25F15DA300757AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0565AC6825F15DA300757AB1 /* DogsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListViewController.swift; sourceTree = "<group>"; };
 		0565AC6D25F15DAB00757AB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0565AC7025F15DAB00757AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0565AC7225F15DAB00757AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +55,13 @@
 		0565AC8225F15DAB00757AB1 /* DogManeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogManeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0565AC8625F15DAB00757AB1 /* DogManeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogManeUITests.swift; sourceTree = "<group>"; };
 		0565AC8825F15DAB00757AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0569318825F16E9700A8DE42 /* DogsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListViewModel.swift; sourceTree = "<group>"; };
+		0569319A25F16F1700A8DE42 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
+		0569319B25F16F1800A8DE42 /* ViewModelDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelDataSourceProtocol.swift; sourceTree = "<group>"; };
+		0569319C25F16F1800A8DE42 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		0569319D25F16F1800A8DE42 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		0569319E25F16F1800A8DE42 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		056931AD25F16FD500A8DE42 /* DogsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0559D35A25F164D0000D07A1 /* RxCocoa in Frameworks */,
+				0565AC9925F15E2900757AB1 /* Domain in Frameworks */,
+				0565AC9F25F1601300757AB1 /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +115,9 @@
 		0565AC6325F15DA300757AB1 /* DogMane */ = {
 			isa = PBXGroup;
 			children = (
+				056931A825F16F2300A8DE42 /* Modules */,
+				0569319825F16EF500A8DE42 /* MVVM */,
 				0565AC6425F15DA300757AB1 /* AppDelegate.swift */,
-				0565AC6625F15DA300757AB1 /* SceneDelegate.swift */,
-				0565AC6825F15DA300757AB1 /* ViewController.swift */,
-				0565AC6A25F15DA300757AB1 /* Main.storyboard */,
 				0565AC6D25F15DAB00757AB1 /* Assets.xcassets */,
 				0565AC6F25F15DAB00757AB1 /* LaunchScreen.storyboard */,
 				0565AC7225F15DAB00757AB1 /* Info.plist */,
@@ -128,6 +143,36 @@
 			path = DogManeUITests;
 			sourceTree = "<group>";
 		};
+		0569319825F16EF500A8DE42 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				0569319D25F16F1800A8DE42 /* Builder.swift */,
+				0569319E25F16F1800A8DE42 /* RouterProtocol.swift */,
+				0569319A25F16F1700A8DE42 /* ViewControllerProtocol.swift */,
+				0569319B25F16F1800A8DE42 /* ViewModelDataSourceProtocol.swift */,
+				0569319C25F16F1800A8DE42 /* ViewModelProtocol.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		056931A825F16F2300A8DE42 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				056931A925F16F3300A8DE42 /* DogsList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		056931A925F16F3300A8DE42 /* DogsList */ = {
+			isa = PBXGroup;
+			children = (
+				0569318825F16E9700A8DE42 /* DogsListViewModel.swift */,
+				056931AD25F16FD500A8DE42 /* DogsListRouter.swift */,
+				0565AC6825F15DA300757AB1 /* DogsListViewController.swift */,
+			);
+			path = DogsList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +189,11 @@
 			dependencies = (
 			);
 			name = DogMane;
+			packageProductDependencies = (
+				0565AC9825F15E2900757AB1 /* Domain */,
+				0565AC9E25F1601300757AB1 /* Network */,
+				0559D35925F164D0000D07A1 /* RxCocoa */,
+			);
 			productName = DogMane;
 			productReference = 0565AC6125F15DA300757AB1 /* DogMane.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +265,11 @@
 				Base,
 			);
 			mainGroup = 0565AC5825F15DA300757AB1;
+			packageReferences = (
+				0565AC9725F15E2900757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Domain" */,
+				0565AC9D25F1601300757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Network" */,
+				0559D35825F164D0000D07A1 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 0565AC6225F15DA300757AB1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +288,6 @@
 			files = (
 				0565AC7125F15DAB00757AB1 /* LaunchScreen.storyboard in Resources */,
 				0565AC6E25F15DAB00757AB1 /* Assets.xcassets in Resources */,
-				0565AC6C25F15DA300757AB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0565AC6925F15DA300757AB1 /* ViewController.swift in Sources */,
+				056931A425F16F1800A8DE42 /* RouterProtocol.swift in Sources */,
+				056931AE25F16FD500A8DE42 /* DogsListRouter.swift in Sources */,
+				0565AC6925F15DA300757AB1 /* DogsListViewController.swift in Sources */,
+				056931A125F16F1800A8DE42 /* ViewModelDataSourceProtocol.swift in Sources */,
+				0569318925F16E9700A8DE42 /* DogsListViewModel.swift in Sources */,
+				056931A225F16F1800A8DE42 /* ViewModelProtocol.swift in Sources */,
+				056931A025F16F1800A8DE42 /* ViewControllerProtocol.swift in Sources */,
 				0565AC6525F15DA300757AB1 /* AppDelegate.swift in Sources */,
-				0565AC6725F15DA300757AB1 /* SceneDelegate.swift in Sources */,
+				056931A325F16F1800A8DE42 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +356,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0565AC6A25F15DA300757AB1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0565AC6B25F15DA300757AB1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0565AC6F25F15DAB00757AB1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -439,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9DJ7HWPB5;
 				INFOPLIST_FILE = DogMane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9DJ7HWPB5;
 				INFOPLIST_FILE = DogMane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,6 +647,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0559D35825F164D0000D07A1 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+		0565AC9725F15E2900757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Domain" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mikeshep/lm-dog-Domain.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+		0565AC9D25F1601300757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Network" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mikeshep/lm-dog-Network.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0559D35925F164D0000D07A1 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0559D35825F164D0000D07A1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		0565AC9825F15E2900757AB1 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0565AC9725F15E2900757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Domain" */;
+			productName = Domain;
+		};
+		0565AC9E25F1601300757AB1 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0565AC9D25F1601300757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Network" */;
+			productName = Network;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0565AC5925F15DA300757AB1 /* Project object */;
 }
