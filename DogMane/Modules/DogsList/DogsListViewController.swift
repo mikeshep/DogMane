@@ -43,7 +43,6 @@ class DogsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Meal Dog"
         binds()
     }
 }

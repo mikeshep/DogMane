@@ -8,9 +8,10 @@
 import Foundation
 import Network
 import RxSwift
+import RealmSwift
 
 struct DogsListViewModelDataSource: ViewModelDataSourceProtocol {
-    
+    var isPopUp: Bool = false
 }
 
 final class DogsListViewModel: ViewModelProtocol {
@@ -35,11 +36,40 @@ final class DogsListViewModel: ViewModelProtocol {
         
         dogDetail
             .do(onNext: { [weak self] dog in
-                self?.router.pushToDetail(with: dog.breed)
+                guard let self = self else { return }
+                if self.dataSource.isPopUp {
+                    self.saveDog(dog)
+                    self.router.closePopUp()
+                } else {
+                    self.router.pushToDetail(with: dog.breed)
+                }
             })
             .subscribe()
             .disposed(by: disposeBag)
     }
+    
+    func saveDog(_ dog: Dog) {
+        let realm = try! Realm()
+        let dogs = realm.objects(DogObject.self).filter { $0.breed == dog.breed }
+        guard dogs.count == 0 else {
+            return
+        }
+        let myDog = DogObject()
+        myDog.breed = dog.breed
+        if let subBreed = dog.subBreed {
+            myDog.subBreed = subBreed
+        }
+        try! realm.write {
+            realm.deleteAll()
+        }
+        try! realm.write {
+            realm.add(myDog)
+        }
+    }
 }
 
+class DogObject: Object {
+    @objc dynamic var breed = ""
+    @objc dynamic var subBreed = ""
+}
 

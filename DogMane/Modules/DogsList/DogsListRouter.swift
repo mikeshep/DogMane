@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SBCardPopup
 
 final class DogsListRouter: RouterProtocol {
     internal weak var viewController: UIViewController?
@@ -18,5 +19,10 @@ final class DogsListRouter: RouterProtocol {
         let dataSource = DogDetailViewModelDataSource(breed: breed)
         let viewController = DogDetailBuilder.build(with: dataSource)
         push(viewController: viewController)
+    }
+    
+    func closePopUp() {
+        let popUp = (viewController?.parent as? SBCardPopupViewController)
+        popUp?.close()
     }
 }
