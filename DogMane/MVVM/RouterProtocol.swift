@@ -24,12 +24,7 @@ extension RouterProtocol {
         viewController?.navigationController?.popViewController(animated: true)
     }
     
-    func push(viewController: UIViewController, isAlphaTransition: Bool = false) {
-        guard isAlphaTransition else {
-            self.viewController?.navigationController?.delegate = nil
-            self.viewController?.navigationController?.pushViewController(viewController, animated: true)
-            return
-        }
-        self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+    func push(viewController: UIViewController) {
+        self.viewController?.tabBarController?.present(viewController, animated: true, completion: nil)
     }
 }

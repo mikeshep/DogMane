@@ -110,6 +110,7 @@ private extension RandomDogViewController {
     func cofigureImageView(with parentView: UIView) {
         imageView = UIImageView()
         imageView.image = UIImage(named: "placeholder")
+        imageView.contentMode = .scaleAspectFit
         parentView.addSubview(imageView)
         guard let imageView = imageView  else { return }
         imageView.snp.makeConstraints { (make) in
