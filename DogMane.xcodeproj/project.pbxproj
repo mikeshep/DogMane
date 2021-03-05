@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0559D35A25F164D0000D07A1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0559D35925F164D0000D07A1 /* RxCocoa */; };
+		055C33BC25F1855000F8A80A /* DogsListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C33BB25F1855000F8A80A /* DogsListBuilder.swift */; };
+		055C33C225F1B1D700F8A80A /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 055C33C125F1B1D700F8A80A /* RxDataSources */; };
 		0565AC6525F15DA300757AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6425F15DA300757AB1 /* AppDelegate.swift */; };
 		0565AC6925F15DA300757AB1 /* DogsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6825F15DA300757AB1 /* DogsListViewController.swift */; };
 		0565AC6E25F15DAB00757AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0565AC6D25F15DAB00757AB1 /* Assets.xcassets */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		055C33BB25F1855000F8A80A /* DogsListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListBuilder.swift; sourceTree = "<group>"; };
 		0565AC6125F15DA300757AB1 /* DogMane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogMane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0565AC6425F15DA300757AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0565AC6825F15DA300757AB1 /* DogsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0559D35A25F164D0000D07A1 /* RxCocoa in Frameworks */,
+				055C33C225F1B1D700F8A80A /* RxDataSources in Frameworks */,
 				0565AC9925F15E2900757AB1 /* Domain in Frameworks */,
 				0565AC9F25F1601300757AB1 /* Network in Frameworks */,
 			);
@@ -169,6 +173,7 @@
 				0569318825F16E9700A8DE42 /* DogsListViewModel.swift */,
 				056931AD25F16FD500A8DE42 /* DogsListRouter.swift */,
 				0565AC6825F15DA300757AB1 /* DogsListViewController.swift */,
+				055C33BB25F1855000F8A80A /* DogsListBuilder.swift */,
 			);
 			path = DogsList;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				0565AC9825F15E2900757AB1 /* Domain */,
 				0565AC9E25F1601300757AB1 /* Network */,
 				0559D35925F164D0000D07A1 /* RxCocoa */,
+				055C33C125F1B1D700F8A80A /* RxDataSources */,
 			);
 			productName = DogMane;
 			productReference = 0565AC6125F15DA300757AB1 /* DogMane.app */;
@@ -269,6 +275,7 @@
 				0565AC9725F15E2900757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Domain" */,
 				0565AC9D25F1601300757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Network" */,
 				0559D35825F164D0000D07A1 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				055C33C025F1B1D700F8A80A /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 0565AC6225F15DA300757AB1 /* Products */;
 			projectDirPath = "";
@@ -314,6 +321,7 @@
 			files = (
 				056931A425F16F1800A8DE42 /* RouterProtocol.swift in Sources */,
 				056931AE25F16FD500A8DE42 /* DogsListRouter.swift in Sources */,
+				055C33BC25F1855000F8A80A /* DogsListBuilder.swift in Sources */,
 				0565AC6925F15DA300757AB1 /* DogsListViewController.swift in Sources */,
 				056931A125F16F1800A8DE42 /* ViewModelDataSourceProtocol.swift in Sources */,
 				0569318925F16E9700A8DE42 /* DogsListViewModel.swift in Sources */,
@@ -657,6 +665,14 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		055C33C025F1B1D700F8A80A /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 		0565AC9725F15E2900757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Domain" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mikeshep/lm-dog-Domain.git";
@@ -680,6 +696,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0559D35825F164D0000D07A1 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		055C33C125F1B1D700F8A80A /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 055C33C025F1B1D700F8A80A /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 		0565AC9825F15E2900757AB1 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;

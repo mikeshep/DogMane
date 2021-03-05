@@ -15,6 +15,6 @@ protocol ViewControllerProtocol: UIViewController {
 
 extension ViewControllerProtocol {
     static func instantiate() -> Self {
-        UIStoryboard(name: String(describing: self), bundle: nil).instantiateInitialViewController() as! Self
+        return Self()
     }
 }
