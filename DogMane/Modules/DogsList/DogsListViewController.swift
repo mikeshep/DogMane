@@ -20,7 +20,7 @@ struct Dog {
         self.subBreed = nil
     }
     
-    init(breed: String, subBreed: String) {
+    init(breed: String, subBreed: String?) {
         self.breed = breed
         self.subBreed = subBreed
     }

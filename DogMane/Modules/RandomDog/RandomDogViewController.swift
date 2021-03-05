@@ -9,6 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import SnapKit
+import Kingfisher
 
 class RandomDogViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class RandomDogViewController: UIViewController {
         configureTitleLabel(with: view)
         configureEmptyLabel(with: view)
         configureSelectBreedButton(with: view)
+        cofigureImageView(with: view)
     }
 
     override func viewDidLoad() {
@@ -41,6 +43,16 @@ extension RandomDogViewController {
             .controlEvent(.touchUpInside)
             .bind(to: viewModel.showBreeds)
             .disposed(by: disposeBag)
+        
+        viewModel.urlPetDog.subscribe { [weak self] (url) in
+            guard let self = self else { return }
+            self.imageView.kf.setImage(with: url.element, placeholder: UIImage(named: "placeholder"))
+        }.disposed(by: disposeBag)
+        
+        viewModel.petDog
+            .map { $0.breed.capitalized }
+            .bind(to: emptyLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -53,13 +65,7 @@ extension RandomDogViewController: ViewControllerProtocol {
 
 //MARK: - Configure View
 private extension RandomDogViewController {
-    func cofigureImageView(with parentView: UIView) {
-        imageView = UIImageView()
-        parentView.addSubview(imageView)
-        guard let imageView = imageView  else { return }
-        setConstraintsToImageView(imageView)
-    }
-    
+
     func configureTitleLabel(with superView: UIView) {
         titleLabel = UILabel()
         titleLabel.font = UIFont.nunitoBoldFont(withSize: 30)
@@ -100,12 +106,23 @@ private extension RandomDogViewController {
             make.right.equalTo(superView).offset(-20)
         }
     }
+    
+    func cofigureImageView(with parentView: UIView) {
+        imageView = UIImageView()
+        imageView.image = UIImage(named: "placeholder")
+        parentView.addSubview(imageView)
+        guard let imageView = imageView  else { return }
+        imageView.snp.makeConstraints { (make) in
+            make.top.equalTo(selectBreedButton).offset(80)
+            make.height.equalTo(300)
+            make.width.equalTo(300)
+            make.centerX.equalTo(parentView)
+        }
+    }
 }
 
 //MARK: - Configure Constraints
 private extension RandomDogViewController {
-    func setConstraintsToImageView(_ imageView: UIImageView) {
- 
-    }
+
 }
 
