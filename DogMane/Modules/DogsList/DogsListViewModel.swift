@@ -30,7 +30,7 @@ final class DogsListViewModel: ViewModelProtocol {
     
     func binds() {
         api.getAllBreeds()
-            .do(onSuccess: { [weak self] in self?.items.onNext($0.message.keys.map(Dog.init)) })
+            .do(onSuccess: { [weak self] in self?.items.onNext($0.message.keys.map(Dog.init).sorted(by: { $0.breed < $1.breed })) })
             .subscribe().disposed(by: disposeBag)
         
         dogDetail

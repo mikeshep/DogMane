@@ -19,6 +19,8 @@ final class DogDetailViewModel: ViewModelProtocol {
     private let api = DogAPI()
     
     let items: PublishSubject<[Dog]> = PublishSubject()
+    let urls: PublishSubject<[URL]> = PublishSubject()
+    let title: Variable<String> = Variable("")
     let disposeBag = DisposeBag()
     
     init(dataSource: DogDetailViewModelDataSource, router: DogDetailRouter) {
@@ -35,6 +37,15 @@ final class DogDetailViewModel: ViewModelProtocol {
                 self.items.onNext(items)
             })
             .subscribe().disposed(by: disposeBag)
+        
+        api.getBreedImages(dataSource.breed)
+            .do(onSuccess: { [weak self] in
+                guard let self = self else { return }
+                self.urls.onNext($0.message)
+            })
+            .subscribe().disposed(by: disposeBag)
+        
+        title.value = dataSource.breed
     }
 }
 

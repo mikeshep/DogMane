@@ -14,6 +14,23 @@
 		055C33CE25F1B83100F8A80A /* DogDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C33CD25F1B83100F8A80A /* DogDetailRouter.swift */; };
 		055C33D625F1B85C00F8A80A /* DogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C33D525F1B85C00F8A80A /* DogDetailViewController.swift */; };
 		055C33DB25F1B86700F8A80A /* DogDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C33DA25F1B86700F8A80A /* DogDetailBuilder.swift */; };
+		055C340525F1F1A500F8A80A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 055C340425F1F1A500F8A80A /* Kingfisher */; };
+		055C340A25F1FA3300F8A80A /* DogDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C340925F1FA3200F8A80A /* DogDetailCollectionViewCell.swift */; };
+		055C341125F20F5500F8A80A /* UIFont+nunito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C341025F20F5500F8A80A /* UIFont+nunito.swift */; };
+		055C342525F210A700F8A80A /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C342025F2109900F8A80A /* Nunito-BoldItalic.ttf */; };
+		055C342625F210A700F8A80A /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C342225F2109900F8A80A /* Nunito-ExtraBold.ttf */; };
+		055C342725F210A700F8A80A /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341F25F2109800F8A80A /* Nunito-SemiBoldItalic.ttf */; };
+		055C342825F210A700F8A80A /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341C25F2109800F8A80A /* Nunito-BlackItalic.ttf */; };
+		055C342925F210A700F8A80A /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341925F2109800F8A80A /* Nunito-LightItalic.ttf */; };
+		055C342A25F210A700F8A80A /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341725F2109700F8A80A /* Nunito-ExtraBoldItalic.ttf */; };
+		055C342B25F210A700F8A80A /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C342325F2109900F8A80A /* Nunito-SemiBold.ttf */; };
+		055C342C25F210A700F8A80A /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341825F2109700F8A80A /* Nunito-Light.ttf */; };
+		055C342D25F210A700F8A80A /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341B25F2109800F8A80A /* Nunito-Regular.ttf */; };
+		055C342E25F210A700F8A80A /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C342125F2109900F8A80A /* Nunito-ExtraLightItalic.ttf */; };
+		055C342F25F210A700F8A80A /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341A25F2109800F8A80A /* Nunito-ExtraLight.ttf */; };
+		055C343025F210A700F8A80A /* Nunito-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341D25F2109800F8A80A /* Nunito-RegularItalic.ttf */; };
+		055C343125F210A700F8A80A /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C341E25F2109800F8A80A /* Nunito-Bold.ttf */; };
+		055C343225F210A700F8A80A /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 055C342425F2109900F8A80A /* Nunito-Black.ttf */; };
 		0565AC6525F15DA300757AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6425F15DA300757AB1 /* AppDelegate.swift */; };
 		0565AC6925F15DA300757AB1 /* DogsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6825F15DA300757AB1 /* DogsListViewController.swift */; };
 		0565AC6E25F15DAB00757AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0565AC6D25F15DAB00757AB1 /* Assets.xcassets */; };
@@ -54,6 +71,22 @@
 		055C33CD25F1B83100F8A80A /* DogDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailRouter.swift; sourceTree = "<group>"; };
 		055C33D525F1B85C00F8A80A /* DogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailViewController.swift; sourceTree = "<group>"; };
 		055C33DA25F1B86700F8A80A /* DogDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailBuilder.swift; sourceTree = "<group>"; };
+		055C340925F1FA3200F8A80A /* DogDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		055C341025F20F5500F8A80A /* UIFont+nunito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+nunito.swift"; sourceTree = "<group>"; };
+		055C341725F2109700F8A80A /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		055C341825F2109700F8A80A /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		055C341925F2109800F8A80A /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
+		055C341A25F2109800F8A80A /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
+		055C341B25F2109800F8A80A /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		055C341C25F2109800F8A80A /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
+		055C341D25F2109800F8A80A /* Nunito-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-RegularItalic.ttf"; sourceTree = "<group>"; };
+		055C341E25F2109800F8A80A /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		055C341F25F2109800F8A80A /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		055C342025F2109900F8A80A /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
+		055C342125F2109900F8A80A /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		055C342225F2109900F8A80A /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		055C342325F2109900F8A80A /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		055C342425F2109900F8A80A /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		0565AC6125F15DA300757AB1 /* DogMane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogMane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0565AC6425F15DA300757AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0565AC6825F15DA300757AB1 /* DogsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +117,7 @@
 				055C33C225F1B1D700F8A80A /* RxDataSources in Frameworks */,
 				0565AC9925F15E2900757AB1 /* Domain in Frameworks */,
 				0565AC9F25F1601300757AB1 /* Network in Frameworks */,
+				055C340525F1F1A500F8A80A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,8 +145,55 @@
 				055C33CD25F1B83100F8A80A /* DogDetailRouter.swift */,
 				055C33D525F1B85C00F8A80A /* DogDetailViewController.swift */,
 				055C33DA25F1B86700F8A80A /* DogDetailBuilder.swift */,
+				055C340925F1FA3200F8A80A /* DogDetailCollectionViewCell.swift */,
 			);
 			path = DogDetail;
+			sourceTree = "<group>";
+		};
+		055C340E25F20F3600F8A80A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				055C340F25F20F4600F8A80A /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		055C340F25F20F4600F8A80A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				055C341025F20F5500F8A80A /* UIFont+nunito.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		055C341525F2106900F8A80A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				055C341625F2108000F8A80A /* Fonts */,
+				0565AC6D25F15DAB00757AB1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		055C341625F2108000F8A80A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				055C342425F2109900F8A80A /* Nunito-Black.ttf */,
+				055C341C25F2109800F8A80A /* Nunito-BlackItalic.ttf */,
+				055C341E25F2109800F8A80A /* Nunito-Bold.ttf */,
+				055C342025F2109900F8A80A /* Nunito-BoldItalic.ttf */,
+				055C342225F2109900F8A80A /* Nunito-ExtraBold.ttf */,
+				055C341725F2109700F8A80A /* Nunito-ExtraBoldItalic.ttf */,
+				055C341A25F2109800F8A80A /* Nunito-ExtraLight.ttf */,
+				055C342125F2109900F8A80A /* Nunito-ExtraLightItalic.ttf */,
+				055C341825F2109700F8A80A /* Nunito-Light.ttf */,
+				055C341925F2109800F8A80A /* Nunito-LightItalic.ttf */,
+				055C341B25F2109800F8A80A /* Nunito-Regular.ttf */,
+				055C341D25F2109800F8A80A /* Nunito-RegularItalic.ttf */,
+				055C342325F2109900F8A80A /* Nunito-SemiBold.ttf */,
+				055C341F25F2109800F8A80A /* Nunito-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		0565AC5825F15DA300757AB1 = {
@@ -138,10 +219,11 @@
 		0565AC6325F15DA300757AB1 /* DogMane */ = {
 			isa = PBXGroup;
 			children = (
+				055C340E25F20F3600F8A80A /* Utils */,
 				056931A825F16F2300A8DE42 /* Modules */,
 				0569319825F16EF500A8DE42 /* MVVM */,
+				055C341525F2106900F8A80A /* Resources */,
 				0565AC6425F15DA300757AB1 /* AppDelegate.swift */,
-				0565AC6D25F15DAB00757AB1 /* Assets.xcassets */,
 				0565AC6F25F15DAB00757AB1 /* LaunchScreen.storyboard */,
 				0565AC7225F15DAB00757AB1 /* Info.plist */,
 			);
@@ -219,6 +301,7 @@
 				0565AC9E25F1601300757AB1 /* Network */,
 				0559D35925F164D0000D07A1 /* RxCocoa */,
 				055C33C125F1B1D700F8A80A /* RxDataSources */,
+				055C340425F1F1A500F8A80A /* Kingfisher */,
 			);
 			productName = DogMane;
 			productReference = 0565AC6125F15DA300757AB1 /* DogMane.app */;
@@ -296,6 +379,7 @@
 				0565AC9D25F1601300757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Network" */,
 				0559D35825F164D0000D07A1 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				055C33C025F1B1D700F8A80A /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				055C340325F1F1A500F8A80A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 0565AC6225F15DA300757AB1 /* Products */;
 			projectDirPath = "";
@@ -313,8 +397,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055C342D25F210A700F8A80A /* Nunito-Regular.ttf in Resources */,
+				055C343125F210A700F8A80A /* Nunito-Bold.ttf in Resources */,
+				055C342525F210A700F8A80A /* Nunito-BoldItalic.ttf in Resources */,
+				055C343225F210A700F8A80A /* Nunito-Black.ttf in Resources */,
+				055C342825F210A700F8A80A /* Nunito-BlackItalic.ttf in Resources */,
 				0565AC7125F15DAB00757AB1 /* LaunchScreen.storyboard in Resources */,
+				055C342B25F210A700F8A80A /* Nunito-SemiBold.ttf in Resources */,
+				055C342A25F210A700F8A80A /* Nunito-ExtraBoldItalic.ttf in Resources */,
 				0565AC6E25F15DAB00757AB1 /* Assets.xcassets in Resources */,
+				055C342E25F210A700F8A80A /* Nunito-ExtraLightItalic.ttf in Resources */,
+				055C342C25F210A700F8A80A /* Nunito-Light.ttf in Resources */,
+				055C342925F210A700F8A80A /* Nunito-LightItalic.ttf in Resources */,
+				055C343025F210A700F8A80A /* Nunito-RegularItalic.ttf in Resources */,
+				055C342725F210A700F8A80A /* Nunito-SemiBoldItalic.ttf in Resources */,
+				055C342625F210A700F8A80A /* Nunito-ExtraBold.ttf in Resources */,
+				055C342F25F210A700F8A80A /* Nunito-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +446,9 @@
 				0565AC6925F15DA300757AB1 /* DogsListViewController.swift in Sources */,
 				056931A125F16F1800A8DE42 /* ViewModelDataSourceProtocol.swift in Sources */,
 				0569318925F16E9700A8DE42 /* DogsListViewModel.swift in Sources */,
+				055C340A25F1FA3300F8A80A /* DogDetailCollectionViewCell.swift in Sources */,
 				056931A225F16F1800A8DE42 /* ViewModelProtocol.swift in Sources */,
+				055C341125F20F5500F8A80A /* UIFont+nunito.swift in Sources */,
 				056931A025F16F1800A8DE42 /* ViewControllerProtocol.swift in Sources */,
 				055C33DB25F1B86700F8A80A /* DogDetailBuilder.swift in Sources */,
 				0565AC6525F15DA300757AB1 /* AppDelegate.swift in Sources */,
@@ -563,7 +663,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9DJ7HWPB5;
 				INFOPLIST_FILE = DogManeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,7 +685,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9DJ7HWPB5;
 				INFOPLIST_FILE = DogManeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,6 +797,14 @@
 				minimumVersion = 3.1.0;
 			};
 		};
+		055C340325F1F1A500F8A80A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
 		0565AC9725F15E2900757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Domain" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mikeshep/lm-dog-Domain.git";
@@ -710,7 +818,7 @@
 			repositoryURL = "https://github.com/mikeshep/lm-dog-Network.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.2;
+				minimumVersion = 1.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -725,6 +833,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 055C33C025F1B1D700F8A80A /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		055C340425F1F1A500F8A80A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 055C340325F1F1A500F8A80A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		0565AC9825F15E2900757AB1 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
