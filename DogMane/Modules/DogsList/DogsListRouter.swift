@@ -14,7 +14,9 @@ final class DogsListRouter: RouterProtocol {
         self.viewController = viewController
     }
     
-    func pushToDetail(with id: String) {
-        
+    func pushToDetail(with breed: String) {
+        let dataSource = DogDetailViewModelDataSource(breed: breed)
+        let viewController = DogDetailBuilder.build(with: dataSource)
+        push(viewController: viewController)
     }
 }

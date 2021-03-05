@@ -1,5 +1,5 @@
 //
-//  DogsListViewController.swift
+//  DogDetailViewController.swift
 //  DogMane
 //
 //  Created by Miguel Angel Olmedo Perez on 04/03/21.
@@ -10,26 +10,10 @@ import RxCocoa
 import RxSwift
 import RxDataSources
 
-
-struct Dog {
-    let breed: String
-    let subBreed: String?
-    
-    init(breed: String) {
-        self.breed = breed
-        self.subBreed = nil
-    }
-    
-    init(breed: String, subBreed: String) {
-        self.breed = breed
-        self.subBreed = subBreed
-    }
-}
-
-class DogsListViewController: UIViewController {
+class DogDetailViewController: UIViewController {
     
     //MARK: - Private vars
-    private var viewModel: DogsListViewModel!
+    private var viewModel: DogDetailViewModel!
     private let disposeBag = DisposeBag()
     
     //MARK: - Public vars
@@ -48,7 +32,7 @@ class DogsListViewController: UIViewController {
     }
 }
 //MARK: - Bind View Model
-extension DogsListViewController {
+extension DogDetailViewController {
     func binds() {
         bindTableView()
     }
@@ -57,29 +41,22 @@ extension DogsListViewController {
         viewModel
             .items
             .asDriver(onErrorJustReturn: []).drive(tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = element.breed
+                cell.textLabel?.text = element.subBreed
                 cell.detailTextLabel?.text = ""
             }
             .disposed(by: disposeBag)
-        
-        tableView
-            .rx
-            .modelSelected(Dog.self)
-            .bind(to: viewModel.dogDetail)
-            .disposed(by: disposeBag)
-        
     }
 }
 
 //MARK: - ViewControllerProtocol
-extension DogsListViewController: ViewControllerProtocol {
-    func configure(with viewModel: DogsListViewModel) {
+extension DogDetailViewController: ViewControllerProtocol {
+    func configure(with viewModel: DogDetailViewModel) {
         self.viewModel = viewModel
     }
 }
 
 //MARK: - Configure View
-private extension DogsListViewController {
+private extension DogDetailViewController {
     func configureTableView(with superView: UIView) {
         tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -90,7 +67,7 @@ private extension DogsListViewController {
 }
 
 //MARK: - Configure Constraints
-private extension DogsListViewController {
+private extension DogDetailViewController {
     func setConstraintsToTableView(_ tableView: UITableView) {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
