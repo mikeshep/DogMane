@@ -74,8 +74,10 @@ extension DogDetailViewController {
             .items
             .asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = element.subBreed
+                cell.textLabel?.text = element.subBreed?.capitalized
+                cell.textLabel?.font = UIFont.nunitoBoldFont(withSize: 20)
                 cell.detailTextLabel?.text = ""
+                cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
     }
@@ -93,7 +95,7 @@ extension DogDetailViewController {
     func bindTitle() {
         viewModel.title
             .asDriver()
-            .drive { [unowned self] in self.title = $0 }
+            .drive { [unowned self] in self.title = $0.capitalized }
             .disposed(by: disposeBag)
     }
     
@@ -206,7 +208,7 @@ private extension DogDetailViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])

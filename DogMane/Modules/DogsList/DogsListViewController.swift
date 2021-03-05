@@ -43,7 +43,7 @@ class DogsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Hola mundo :'v"
+        title = "Meal Dog"
         binds()
     }
 }
@@ -57,8 +57,10 @@ extension DogsListViewController {
         viewModel
             .items
             .asDriver(onErrorJustReturn: []).drive(tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = element.breed
+                cell.textLabel?.text = element.breed.capitalized
+                cell.textLabel?.font = UIFont.nunitoBoldFont(withSize: 20)
                 cell.detailTextLabel?.text = ""
+                cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
         
