@@ -64,9 +64,9 @@ class MainTabBarViewController: RAMAnimatedTabBarController, ViewControllerProto
         centralButton.addTarget(self, action: #selector(MainTabBarViewController.takePhoto), for: .touchUpInside)
 
         centralButton.snp.makeConstraints { (make) in
-            make.size.equalTo(60)
+            make.size.equalTo(90)
         }
-        centralButton.layer.cornerRadius = 30
+        centralButton.layer.cornerRadius = 45
         centralButton.layer.shadowColor = UIColor.black.cgColor
         centralButton.layer.shadowRadius = 5
         centralButton.layer.shadowOpacity = 0.75
