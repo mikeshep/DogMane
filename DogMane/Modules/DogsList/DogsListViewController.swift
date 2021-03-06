@@ -45,6 +45,11 @@ class DogsListViewController: UIViewController {
         super.viewDidLoad()
         binds()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear.onNext(())
+    }
 }
 //MARK: - Bind View Model
 extension DogsListViewController {

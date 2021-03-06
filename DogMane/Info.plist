@@ -36,19 +36,23 @@
 	<array>
 		<string>Nunito-Black.ttf</string>
 		<string>Nunito-BlackItalic.ttf</string>
-        <string>Nunito-Bold.ttf</string>
-        <string>Nunito-BoldItalic.ttf</string>
-        <string>Nunito-ExtraBold.ttf</string>
-        <string>Nunito-ExtraBoldItalic.ttf</string>
-        <string>Nunito-ExtraLight.ttf</string>
-        <string>Nunito-ExtraLightItalic.ttf</string>
-        <string>Nunito-Light.ttf</string>
-        <string>Nunito-LightItalic.ttf</string>
-        <string>Nunito-Regular.ttf</string>
-        <string>Nunito-RegularItalic.ttf</string>
-        <string>Nunito-SemiBold.ttf</string>
-        <string>Nunito-SemiBoldItalic.ttf</string>
+		<string>Nunito-Bold.ttf</string>
+		<string>Nunito-BoldItalic.ttf</string>
+		<string>Nunito-ExtraBold.ttf</string>
+		<string>Nunito-ExtraBoldItalic.ttf</string>
+		<string>Nunito-ExtraLight.ttf</string>
+		<string>Nunito-ExtraLightItalic.ttf</string>
+		<string>Nunito-Light.ttf</string>
+		<string>Nunito-LightItalic.ttf</string>
+		<string>Nunito-Regular.ttf</string>
+		<string>Nunito-RegularItalic.ttf</string>
+		<string>Nunito-SemiBold.ttf</string>
+		<string>Nunito-SemiBoldItalic.ttf</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) Se requiere el uso de la camara para poder tomarle una foto a tu mascota</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>DogMane requiere acceder a su biblioteca de fotos para guardar la foto de su mascota</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

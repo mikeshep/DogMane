@@ -46,6 +46,7 @@
 		055D43DE25F2CB14008BDC80 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 055D43DD25F2CB14008BDC80 /* Realm */; };
 		055D43E025F2CB14008BDC80 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 055D43DF25F2CB14008BDC80 /* RealmSwift */; };
 		055D43EF25F2E9B4008BDC80 /* FSPagerView in Frameworks */ = {isa = PBXBuildFile; productRef = 055D43EE25F2E9B4008BDC80 /* FSPagerView */; };
+		055D43F825F30C29008BDC80 /* ImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 055D43F725F30C29008BDC80 /* ImagePicker */; };
 		0565AC6525F15DA300757AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6425F15DA300757AB1 /* AppDelegate.swift */; };
 		0565AC6925F15DA300757AB1 /* DogsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565AC6825F15DA300757AB1 /* DogsListViewController.swift */; };
 		0565AC6E25F15DAB00757AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0565AC6D25F15DAB00757AB1 /* Assets.xcassets */; };
@@ -141,6 +142,7 @@
 				055C33C225F1B1D700F8A80A /* RxDataSources in Frameworks */,
 				055D435C25F28AFA008BDC80 /* RAMAnimatedTabBarController in Frameworks */,
 				055D43A925F2B612008BDC80 /* SnapKit in Frameworks */,
+				055D43F825F30C29008BDC80 /* ImagePicker in Frameworks */,
 				0565AC9925F15E2900757AB1 /* Domain in Frameworks */,
 				0565AC9F25F1601300757AB1 /* Network in Frameworks */,
 				055D43EF25F2E9B4008BDC80 /* FSPagerView in Frameworks */,
@@ -363,6 +365,7 @@
 				055D43DD25F2CB14008BDC80 /* Realm */,
 				055D43DF25F2CB14008BDC80 /* RealmSwift */,
 				055D43EE25F2E9B4008BDC80 /* FSPagerView */,
+				055D43F725F30C29008BDC80 /* ImagePicker */,
 			);
 			productName = DogMane;
 			productReference = 0565AC6125F15DA300757AB1 /* DogMane.app */;
@@ -446,6 +449,7 @@
 				055D43D625F2C07B008BDC80 /* XCRemoteSwiftPackageReference "SBCardPopup" */,
 				055D43DC25F2CB14008BDC80 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				055D43ED25F2E9B4008BDC80 /* XCRemoteSwiftPackageReference "FSPagerView" */,
+				055D43F625F30C29008BDC80 /* XCRemoteSwiftPackageReference "ImagePicker" */,
 			);
 			productRefGroup = 0565AC6225F15DA300757AB1 /* Products */;
 			projectDirPath = "";
@@ -920,6 +924,14 @@
 				kind = branch;
 			};
 		};
+		055D43F625F30C29008BDC80 /* XCRemoteSwiftPackageReference "ImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hyperoslo/ImagePicker";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		0565AC9725F15E2900757AB1 /* XCRemoteSwiftPackageReference "lm-dog-Domain" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mikeshep/lm-dog-Domain.git";
@@ -983,6 +995,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 055D43ED25F2E9B4008BDC80 /* XCRemoteSwiftPackageReference "FSPagerView" */;
 			productName = FSPagerView;
+		};
+		055D43F725F30C29008BDC80 /* ImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 055D43F625F30C29008BDC80 /* XCRemoteSwiftPackageReference "ImagePicker" */;
+			productName = ImagePicker;
 		};
 		0565AC9825F15E2900757AB1 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;

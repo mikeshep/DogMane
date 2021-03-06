@@ -10,13 +10,16 @@ import RxCocoa
 import RxSwift
 import RAMAnimatedTabBarController
 import SnapKit
+import ImagePicker
 
 class MainTabBarViewController: RAMAnimatedTabBarController, ViewControllerProtocol {
-    
+
     //MARK: - Private vars
     private var viewModel: MainViewModel!
     private let disposeBag = DisposeBag()
-    lazy var firstViewController: UIViewController = {
+    private var centralButton: UIButton!
+    
+    private lazy var firstViewController: UIViewController = {
         let firstViewController = RandomDogBuilder.build(with: RandomDogViewModelDataSource())
         let item01 = RAMAnimatedTabBarItem(title: "Mascota", image: UIImage(named: "dog"), tag: 0)
         let animation = RAMBounceAnimation()
@@ -27,7 +30,7 @@ class MainTabBarViewController: RAMAnimatedTabBarController, ViewControllerProto
         return firstViewController
     }()
     
-    lazy var secondViewController: UIViewController = {
+    private lazy var secondViewController: UIViewController = {
         let dataSource = DogsListViewModelDataSource()
         let secondViewController = DogsListBuilder.build(with: dataSource)
         let item02 = RAMAnimatedTabBarItem(title: "Buscar", image: UIImage(named: "loupe"), tag: 0)
@@ -53,24 +56,26 @@ class MainTabBarViewController: RAMAnimatedTabBarController, ViewControllerProto
     }
     
     func configureButtonCenter() {
-        let button = UIButton()
-        button.setImage(UIImage(named: "camera"), for: .normal)
-        button.backgroundColor = .white
-        button.sizeToFit()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        centralButton = UIButton()
+        centralButton.setImage(UIImage(named: "camera"), for: .normal)
+        centralButton.backgroundColor = .white
+        centralButton.sizeToFit()
+        centralButton.translatesAutoresizingMaskIntoConstraints = false
+        centralButton.addTarget(self, action: #selector(MainTabBarViewController.takePhoto), for: .touchUpInside)
 
-        button.snp.makeConstraints { (make) in
+        centralButton.snp.makeConstraints { (make) in
             make.size.equalTo(60)
         }
-        button.layer.cornerRadius = 30
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowRadius = 5
-        button.layer.shadowOpacity = 0.75
-        button.layer.shadowOffset = .zero
+        centralButton.layer.cornerRadius = 30
+        centralButton.layer.shadowColor = UIColor.black.cgColor
+        centralButton.layer.shadowRadius = 5
+        centralButton.layer.shadowOpacity = 0.75
+        centralButton.layer.shadowOffset = .zero
+        centralButton.isUserInteractionEnabled = true
         
-        tabBar.addSubview(button)
-        tabBar.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
-        tabBar.topAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
+        tabBar.addSubview(centralButton)
+        tabBar.centerXAnchor.constraint(equalTo: centralButton.centerXAnchor).isActive = true
+        tabBar.topAnchor.constraint(equalTo: centralButton.centerYAnchor).isActive = true
     }
     
     func configureTabBar() {
@@ -78,4 +83,27 @@ class MainTabBarViewController: RAMAnimatedTabBarController, ViewControllerProto
         viewControllers = tabBarList
         configureButtonCenter()
     }
+    
+    @objc func takePhoto() {
+        let imagePickerController = ImagePickerController()
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+}
+
+
+extension MainTabBarViewController: ImagePickerDelegate {
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        debugPrint("wrapperDidPress")
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

@@ -22,6 +22,7 @@ final class DogsListViewModel: ViewModelProtocol {
     let items: PublishSubject<[Dog]> = PublishSubject()
     let dogDetail: PublishSubject<Dog> = PublishSubject()
     let disposeBag = DisposeBag()
+    let viewWillAppear = PublishSubject<Void>()
     
     init(dataSource: DogsListViewModelDataSource, router: DogsListRouter) {
         self.dataSource = dataSource
@@ -30,9 +31,9 @@ final class DogsListViewModel: ViewModelProtocol {
     }
     
     func binds() {
-        api.getAllBreeds()
-            .do(onSuccess: { [weak self] in self?.items.onNext($0.message.keys.map(Dog.init).sorted(by: { $0.breed < $1.breed })) })
-            .subscribe().disposed(by: disposeBag)
+        viewWillAppear.subscribe { _ in
+            self.getAllBreeds()
+        }.disposed(by: disposeBag)
         
         dogDetail
             .do(onNext: { [weak self] dog in
@@ -44,6 +45,14 @@ final class DogsListViewModel: ViewModelProtocol {
                     self.router.pushToDetail(with: dog.breed)
                 }
             })
+            .subscribe()
+            .disposed(by: disposeBag)
+        getAllBreeds()
+    }
+    
+    func getAllBreeds()  {
+        api.getAllBreeds()
+            .do(onSuccess: { [weak self] in self?.items.onNext($0.message.keys.map(Dog.init).sorted(by: { $0.breed < $1.breed })) })
             .subscribe()
             .disposed(by: disposeBag)
     }
