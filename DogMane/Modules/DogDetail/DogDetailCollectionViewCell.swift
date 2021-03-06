@@ -26,9 +26,6 @@ class DogDetailCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with url: URL) {
-        //let downloader = ImageDownloader(name: )
-
-        //KF.url(url)
         KF.url(url)
           .placeholder(UIImage(named: "placeholder"))
           .loadDiskFileSynchronously()

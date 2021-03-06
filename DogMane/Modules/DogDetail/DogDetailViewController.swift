@@ -9,6 +9,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
+import FSPagerView
+import SnapKit
+import Kingfisher
 
 struct AnimatedSectionModel {
     let title: String
@@ -39,18 +42,21 @@ class DogDetailViewController: UIViewController {
     //MARK: - Private vars
     private var viewModel: DogDetailViewModel!
     private let disposeBag = DisposeBag()
+    private var titleLabel: UILabel!
+    private var subTitleLabel: UILabel!
     private var tableView: UITableView!
-    private var collectionView: UICollectionView!
     private var emptyTableViewView: UIView!
-    private var emptySearchImageView: UIImageView!
     private var emptyTitleLabel: UILabel!
+    private let pagerView = FSPagerView(frame: .zero)
     
     //MARK: - Public vars
     
     override func loadView() {
         view = UIView()
         view.backgroundColor = .white
-        configureCollectionView(with: view)
+        configureTitleLabel(with: view)
+        configurePagerView(with: view)
+        configureSubTitleLabel(with: view)
         configureEmptyTableViewView(with: view)
         configureTableView(with: view)
     }
@@ -64,7 +70,7 @@ class DogDetailViewController: UIViewController {
 extension DogDetailViewController {
     func binds() {
         bindTableView()
-        bindCollectionView()
+        bindPagerView()
         bindTitle()
         bindEmptyTableViewView()
     }
@@ -76,26 +82,35 @@ extension DogDetailViewController {
             .drive(tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = element.subBreed?.capitalized
                 cell.textLabel?.font = UIFont.nunitoBoldFont(withSize: 20)
+                cell.textLabel?.contentMode = .center
+                cell.textLabel?.textAlignment = .center
                 cell.detailTextLabel?.text = ""
                 cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
+        
+        tableView
+            .rx
+            .modelSelected(Dog.self)
+            .bind(to: viewModel.dogDetail)
+            .disposed(by: disposeBag)
     }
     
-    func bindCollectionView() {
+    func bindPagerView() {
         viewModel
             .urls
-            .asDriver(onErrorJustReturn: [])
-            .drive(collectionView.rx.items(cellIdentifier: "Cell", cellType: DogDetailCollectionViewCell.self)) { (row, element, cell) in
-                cell.configure(with: element)
-            }
+            .asDriver(onErrorJustReturn: []).do {[weak self] _ in
+                self?.pagerView.reloadData()
+            }.drive()
             .disposed(by: disposeBag)
+
     }
     
     func bindTitle() {
         viewModel.title
             .asDriver()
-            .drive { [unowned self] in self.title = $0.capitalized }
+            .map{ $0.capitalized }
+            .drive(titleLabel.rx.text)
             .disposed(by: disposeBag)
     }
     
@@ -124,24 +139,59 @@ extension DogDetailViewController: ViewControllerProtocol {
 
 //MARK: - Configure View
 private extension DogDetailViewController {
+    func configureTitleLabel(with superView: UIView) {
+        titleLabel = UILabel()
+        titleLabel.font = UIFont.nunitoBoldFont(withSize: 30)
+        titleLabel.textAlignment = .center
+        superView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(superView).offset(50)
+            make.left.equalTo(superView).offset(20)
+            make.right.equalTo(superView).offset(-20)
+        }
+    }
+    
+    func configurePagerView(with superView: UIView) {
+        pagerView.dataSource = self
+        pagerView.delegate = self
+        pagerView.transformer = FSPagerViewTransformer(type: .linear)
+        pagerView.itemSize = CGSize(width: 280, height: 250)
+        pagerView.interitemSpacing = 1
+        pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+        superView.addSubview(pagerView)
+        pagerView.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(32)
+            make.left.equalTo(superView)
+            make.right.equalTo(superView)
+            make.height.equalTo(300)
+        }
+    }
+    
+    func configureSubTitleLabel(with superView: UIView) {
+        subTitleLabel = UILabel()
+        subTitleLabel.font = UIFont.nunitoRegularFont(withSize: 25)
+        subTitleLabel.textAlignment = .center
+        subTitleLabel.text = "Sub razas"
+        superView.addSubview(subTitleLabel)
+        subTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(pagerView.snp.bottom)
+            make.left.equalTo(superView).offset(20)
+            make.right.equalTo(superView).offset(-20)
+        }
+    }
+    
     func configureTableView(with superView: UIView) {
         tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
         superView.addSubview(tableView)
-        guard let tableView = tableView else { return }
-        setConstraintsToTableView(tableView)
-    }
-    
-    func configureCollectionView(with superView: UIView) {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 240, height: 240)
-        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.register(DogDetailCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.backgroundColor = .white
-        superView.addSubview(collectionView)
-        guard let collectionView = collectionView else { return}
-        setConstraintsToCollectionView(collectionView)
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(subTitleLabel.snp.bottom)
+            make.bottom.equalTo(superView)
+            make.left.equalTo(superView)
+            make.right.equalTo(superView)
+        }
     }
     
     func configureEmptyTableViewView(with superView: UIView) {
@@ -149,20 +199,7 @@ private extension DogDetailViewController {
         superView.addSubview(emptyTableViewView)
         guard let view = emptyTableViewView else { return}
         setConstraintsToEmptyTableViewView(view)
-        configureEmptySearchImageVieww(with: emptyTableViewView)
         configureEmptyTitleLabel(with: emptyTableViewView)
-    }
-    
-    func configureEmptySearchImageVieww(with superView: UIView) {
-        emptySearchImageView = UIImageView()
-        emptySearchImageView.image = UIImage(named: "emptySearch")
-        emptySearchImageView.translatesAutoresizingMaskIntoConstraints = false
-        superView.addSubview(emptySearchImageView)
-        guard let emptySearchImageView = emptySearchImageView else { return }
-        NSLayoutConstraint.activate([
-            emptySearchImageView.topAnchor.constraint(equalTo: superView.topAnchor, constant: 100),
-            emptySearchImageView.centerXAnchor.constraint(equalTo: superView.centerXAnchor)
-        ])
     }
     
     func configureEmptyTitleLabel(with superView: UIView) {
@@ -175,7 +212,8 @@ private extension DogDetailViewController {
         superView.addSubview(emptyTitleLabel)
         guard let emptyTitleLabel = emptyTitleLabel else { return }
         NSLayoutConstraint.activate([
-            emptyTitleLabel.topAnchor.constraint(equalTo: emptySearchImageView.bottomAnchor, constant: 50),
+            emptyTitleLabel.topAnchor.constraint(equalTo: superView.topAnchor, constant: 100),
+            emptyTitleLabel.centerXAnchor.constraint(equalTo: superView.centerXAnchor),
             emptyTitleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: superView.leadingAnchor, constant: 80),
             emptyTitleLabel.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -80)
         ])
@@ -184,36 +222,35 @@ private extension DogDetailViewController {
 
 //MARK: - Configure Constraints
 private extension DogDetailViewController {
-    func setConstraintsToCollectionView(_ collectionView: UICollectionView) {
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(lessThanOrEqualTo: view.topAnchor, constant: 100),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
-            collectionView.heightAnchor.constraint(lessThanOrEqualToConstant: 250)
-        ])
-    }
-    
+
     func setConstraintsToEmptyTableViewView(_ view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
+            view.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 16),
             view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
     }
+}
+
+
+extension DogDetailViewController: FSPagerViewDataSource{
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return viewModel.urlsValue.count
+    }
     
-    func setConstraintsToTableView(_ tableView: UITableView) {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
-            tableView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        let url = viewModel.urlsValue[index]
+        cell.imageView?.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+        cell.imageView?.contentMode = .scaleAspectFit
+        return cell
     }
     
     
 }
 
+extension DogDetailViewController: FSPagerViewDelegate {
+    
+}

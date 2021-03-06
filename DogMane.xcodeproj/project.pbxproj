@@ -305,10 +305,10 @@
 			isa = PBXGroup;
 			children = (
 				0569319D25F16F1800A8DE42 /* Builder.swift */,
-				0569319E25F16F1800A8DE42 /* RouterProtocol.swift */,
 				0569319A25F16F1700A8DE42 /* ViewControllerProtocol.swift */,
 				0569319B25F16F1800A8DE42 /* ViewModelDataSourceProtocol.swift */,
 				0569319C25F16F1800A8DE42 /* ViewModelProtocol.swift */,
+				0569319E25F16F1800A8DE42 /* RouterProtocol.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";

@@ -27,9 +27,6 @@ final class RandomDogRouter: RouterProtocol {
             make.width.equalTo(width)
         }
         guard let tabBarController = self.viewController?.tabBarController else { return }
-        cardPopup.show(onViewController: tabBarController)    }
+        cardPopup.show(onViewController: tabBarController)
+    }
 }
-
-
-///let cardPopup = SBCardPopupViewController(contentViewController: myViewController)
-//cardPopup.show(onViewController: self)
