@@ -111,6 +111,10 @@ private extension RandomDogViewController {
         imageView = UIImageView()
         imageView.image = UIImage(named: "placeholder")
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowRadius = 5
+        imageView.layer.shadowOpacity = 0.75
+        imageView.layer.shadowOffset = .zero
         parentView.addSubview(imageView)
         guard let imageView = imageView  else { return }
         imageView.snp.makeConstraints { (make) in
